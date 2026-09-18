@@ -1,0 +1,353 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #e0e5ec;
+    display: flex;
+    flex-direction: column; /* Coloca o título em cima e o form embaixo */
+    justify-content: flex-start; /* Faz o conteúdo começar do topo */
+    align-items: center;
+    min-height: 100vh; /* Usa min-height para deixar a tela crescer */
+    margin: 0;
+    padding: 40px 20px; /* Dá uma margem de respiro em cima e embaixo */
+    box-sizing: border-box;
+}
+
+.container {
+    background: white;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    max-width: 600px;
+    text-align: center;
+}
+
+button {
+    padding: 12px 24px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 20px;
+}
+
+.titulo {
+    font-size: 50px;
+    font-weight: bold; /* Corrigido de font-style */
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 30px;
+    color: #333;
+    position: relative; /* Tira o absolute para ele não ser engolido */
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Estilos dos Modais (Pop-ups) */
+.modal {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background-color: rgba(0,0,0,0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    
+    /* Configurações de animação do fundo escuro */
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.4s ease, visibility 0.4s ease;
+}
+
+.escondido {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.escondido .modal-conteudo {
+    transform: scale(0.5);
+}
+
+.modal-conteudo {
+    background: white;
+    padding: 30px;
+    border-radius: 8px;
+    width: 500px;
+    text-align: center;
+    
+    /* Animação de pulo (Bouncy effect) */
+    transform: scale(1);
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.caixa-scroll {
+    height: 150px; /* Altura propositalmente pequena para forçar o scroll */
+    overflow-y: scroll;
+    border: 1px solid #ccc;
+    padding: 15px;
+    text-align: justify;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    background: #f9f9f9;
+}
+
+.checkbox-escondido {
+    padding: 2px 5px;
+    font-style: italic;
+}
+
+.aviso {
+    border: 3px solid red;
+}
+.aviso h2 {
+    color: red;
+}
+
+/* Classe para sumir com a barra de rolagem visualmente */
+.esconder-scrollbar::-webkit-scrollbar {
+    display: none; /* Chrome, Safari e Opera */
+}
+
+.esconder-scrollbar {
+    -ms-overflow-style: none;  /* IE e Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+@keyframes tremer {
+    0% { transform: translate(1px, 1px) rotate(0deg); }
+    10% { transform: translate(-1px, -2px) rotate(-1deg); }
+    20% { transform: translate(-3px, 0px) rotate(1deg); }
+    30% { transform: translate(3px, 2px) rotate(0deg); }
+    40% { transform: translate(1px, -1px) rotate(1deg); }
+    50% { transform: translate(-1px, 2px) rotate(-1deg); }
+    60% { transform: translate(-3px, 1px) rotate(0deg); }
+    70% { transform: translate(3px, 1px) rotate(-1deg); }
+    80% { transform: translate(-1px, -1px) rotate(1deg); }
+    90% { transform: translate(1px, 2px) rotate(0deg); }
+    100% { transform: translate(0px, 0px) rotate(0deg); }
+}
+
+#modalAviso:not(.escondido) .modal-conteudo {
+    animation: tremer 0.4s;
+    animation-iteration-count: 2; /* Trepida duas vezes seguidas bem rápido */
+}
+
+/* Estilos do Formulário Principal */
+.controles-nome {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+#seletorLetra {
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+
+.destaque {
+    background-color: #f0f0f0;
+    padding: 10px;
+    border-radius: 4px;
+    margin-top: 15px;
+    font-family: monospace;
+    font-size: 18px;
+}
+
+.btn-perigo {
+    background-color: #dc3545;
+}
+
+.btn-perigo:hover {
+    background-color: #c82333;
+}
+
+/* Remove o elemento completamente do layout da página */
+.oculto-layout {
+    display: none !important;
+}
+
+/* Estilos da Roleta de Nome - Ilusão de Input Real */
+.falso-input {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px; 
+    font-family: Arial, sans-serif; /* Fonte padrão de sistema para enganar */
+    border: 1px solid #767676; /* Cor exata da borda padrão dos navegadores */
+    border-radius: 2px;
+    background-color: #fff;
+    cursor: text; /* O cursor em formato de "I" faz a pessoa achar que pode digitar */
+    min-height: 40px;
+    box-sizing: border-box;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    user-select: none;
+}
+
+/* O texto fantasma que imita o atributo 'placeholder' */
+.falso-input.vazio::before {
+    content: "Digite seu nome aqui...";
+    color: #757575;
+}
+
+.falso-input:hover {
+    border-color: #4f4f4f; /* Escurece levemente no hover, padrão de formulários reais */
+}
+
+/* Quando o usuário clica e a armadilha ativa */
+.falso-input.roleta-ativa {
+    cursor: crosshair; /* O cursor vira uma mira agressiva */
+    font-family: monospace; /* Fonte de máquina de escrever para a roleta não tremer o layout */
+    font-size: 18px;
+}
+
+.letra-girando {
+    color: red;
+    font-weight: bold;
+    background-color: #ffe6e6;
+    border-bottom: 2px solid red;
+}
+
+/* Efeito de Texto Flutuante no Mouse */
+.texto-arco {
+    position: absolute;
+    color: red;
+    font-weight: bold;
+    font-size: 14px;
+    background-color: rgba(255, 255, 255, 0.95);
+    padding: 4px 8px;
+    border: 1px solid red;
+    border-radius: 4px;
+    pointer-events: none;
+    z-index: 9999;
+    white-space: nowrap;
+    
+    /* A animação usa cubic-bezier para simular a explosão inicial rápida */
+    animation: pularArco 1s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+
+@keyframes pularArco {
+    0% {
+        transform: translate(-50%, -50%) scale(0.5);
+        opacity: 1;
+    }
+    40% {
+        /* Agora ele soma o pulo aleatório mantendo o alinhamento */
+        transform: translate(calc(-50% + (var(--move-x) * 0.5)), calc(-50% + var(--jump-y))) scale(1.1);
+        opacity: 1;
+    }
+    100% {
+        /* A queda agora também mantém a proporção */
+        transform: translate(calc(-50% + var(--move-x)), calc(-50% + 60px)) scale(0.8);
+        opacity: 0;
+    }
+}
+
+/* Texto fantasma camuflado para o campo de Endereço */
+.falso-input.vazio-endereco::before {
+    content: "Digite seu endereço completo...";
+    color: #757575;
+}
+
+/* Organização dos Sliders do Radar */
+.controles-coordenadas {
+    display: flex;
+    flex-direction: column; /* Coloca um debaixo do outro */
+    gap: 15px; /* Espaço entre os campos */
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.controles-coordenadas label {
+    font-weight: bold;
+    font-size: 14px;
+    display: block; /* Garante que o texto fique em cima do slider */
+    margin-bottom: 5px;
+}
+
+.controles-coordenadas input[type="range"] {
+    width: 100%; /* Força os sliders a usarem todo o espaço disponível */
+    cursor: grab;
+}
+
+.controles-coordenadas input[type="range"]:active {
+    cursor: grabbing;
+}
+
+/* Texto fantasma para o campo de Data de Nascimento */
+.falso-input.vazio-nascimento::before {
+    content: "DD/MM/AAAA";
+    color: #757575;
+}
+
+.falso-input.vazio-nascimento::before {
+    content: "DD/MM/AAAA";
+    color: #757575;
+}
+
+.falso-input.vazio-idade::before {
+    content: "Confirme sua idade aqui...";
+    color: #757575;
+}
+
+.falso-input.vazio-email::before {
+    content: "Digite seu e-mail aqui...";
+    color: #757575;
+}
+
+/* Estilo definitivo para o Teclado Virtual Caótico */
+#tecladoVirtual button {
+    width: 38px !important;
+    height: 38px !important;
+    padding: 0 !important;
+    font-size: 16px !important;
+    font-weight: bold !important;
+    cursor: pointer !important;
+    background-color: #e2e8f0 !important; /* Cinza claro bem destacado */
+    color: #1a202c !important; /* Letras escuras para contraste */
+    border: 1px solid #cbd5e1 !important;
+    border-radius: 4px !important;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    transition: background-color 0.1s ease;
+}
+
+#tecladoVirtual button:hover {
+    background-color: #cbd5e1 !important; /* Escurece quando o mouse passa em cima */
+}
+
+#tecladoVirtual button:active {
+    background-color: #94a3b8 !important; /* Afundando ao clicar */
+    transform: translateY(1px);
+}
+
+/* Garante que inputs reais que usem a classe falso-input fiquem idênticos às caixas falsas */
+input.falso-input {
+    display: block !important;
+    padding: 10px !important;
+    font-size: 14px !important;
+    font-family: Arial, sans-serif !important;
+    color: #000 !important;
+}
+
+input.falso-input:focus {
+    border-color: #007bff !important; /* Dá um destaque azul padrão quando o usuário clica para digitar */
+    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+}
+
+.campo {
+    margin-bottom: 25px; /* Cria um espaçamento generoso entre um campo e o próximo */
+    text-align: left; /* Alinha as perguntas e inputs bonitinhos à esquerda */
+}
+
+.campo label {
+    display: block;
+    margin-bottom: 8px; /* Dá um espaço entre o texto da pergunta e a caixinha logo abaixo */
+    font-weight: bold;
+    font-size: 14px;
+}
