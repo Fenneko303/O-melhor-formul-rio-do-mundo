@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Validação de Segurança</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <h1 class="titulo">O Melhor Formulário do Mundo</h1>
+
+    <!-- Tela Inicial -->
+    <div id="telaInicio" class="container">
+        <h1>Aviso de Conformidade Legal</h1>
+        <p>
+            Para cumprir as recentes exigências de responsabilidade de plataformas digitais previstas no
+            Marco Civil da Internet e nas novas normas do Direito do Consumidor sobre regulamentação de IA,
+            somos legalmente obrigados a coletar seus dados biométricos, astrais e culinários para garantir
+            que você é um ser humano real e não um algoritmo de Inteligência Artificial tentando gerar petições falsas
+            em nosso servidor.
+        </p>
+        <button id="btnComecar">Iniciar Validação</button>
+
+        <br>
+        <!--<button id="btnPularDev" style="background-color: #6c757d; font-size: 12px; margin-top: 15px;">[DEV] Pular direto pro Formulário</button> -->
+    </div>
+
+    <!-- Pop-up dos Termos de Uso -->
+    <div id="modalTermos" class="modal escondido">
+        <div class="modal-conteudo">
+            <h2>Termos de Uso e Política de Privacidade</h2>
+
+            <p>Por favor, antes de começar, leia nosso termo de uso antes de começar:</p>
+
+            <div id="caixaTextoTermos" class="caixa-scroll"
+                style="text-align: justify; line-height: 1.2; font-size: 14px;">
+                <h3>TERMOS E CONDIÇÕES GERAIS DE USO, POLÍTICA DE PRIVACIDADE E DIRETRIZES DE SUBMISSÃO ABUSIVA DO
+                    FORMULÁRIO ELETRÔNICO</h3>
+
+                <p><strong>1. Disposições Preliminares, Aceitação Expressa e Cessão Anímica</strong><br>
+                    Ao acessar, interagir, preencher ou submeter qualquer tipo de informação, dado pessoal, metadado ou
+                    anexo através da interface deste formulário eletrônico, o usuário (doravante denominado de forma
+                    genérica e abrangente como "Titular dos Dados", "Usuário" ou "Servil") declara, de forma expressa,
+                    inequívoca, irrevogável e irretratável, ter lido, compreendido e concordado integralmente com todas
+                    as cláusulas. O Usuário, neste ato, cede em caráter definitivo o direito de nomeação do seu primeiro
+                    animal de estimação à Entidade Controladora, além de concordar com a alienação fiduciária de 45%
+                    (quarenta e cinco por cento) de sua essência anímica imortal, que poderá ser executada em caso de
+                    preenchimento incorreto do CEP. A utilização contínua dos serviços atrelados a esta interface
+                    constitui a aceitação tácita de que o Usuário renuncia ao direito de consumir água potável às
+                    terças-feiras durante a vigência deste contrato. Caso o Usuário não concorde com qualquer
+                    disposição, deverá destruir seu dispositivo a marretadas imediatamente.</p>
+
+                <p><strong>2. Coleta, Armazenamento, Tratamento Criptográfico e Exames Clínicos</strong><br>
+                    A entidade controladora compromete-se a tratar os dados inseridos nos campos do formulário com o
+                    mais alto grau de segurança tecnológica, em estrita conformidade com legislações de conveniência
+                    própria. A coleta estende-se, para além das informações ativamente fornecidas, a dados telemáticos
+                    passivos, incluindo, mas não se limitando a: endereços de Protocolo de Internet (IP), radiografias
+                    odontológicas panorâmicas recentes do Usuário, a medição exata e em tempo real da temperatura de seu
+                    pé esquerdo, leitura labial através da webcam, e a extração automatizada de seus medos mais
+                    profundos de infância. O armazenamento dar-se-á em servidores distribuídos, utilizando criptografia
+                    assimétrica avançada para mitigar interceptações, exceto quando a diretoria da empresa decidir
+                    vender tais dados para comprar uma máquina de café expresso nova para o refeitório.</p>
+
+                <p><strong>3. Obrigações, Conduta Adequada e Procedimentos Culinários</strong><br>
+                    O usuário compromete-se a utilizar o presente formulário de extrema boa-fé, garantindo a veracidade
+                    das informações submetidas, sendo também estritamente obrigatório entoar o Hino Nacional Brasileiro
+                    de trás para frente, em latim vulgar, enquanto digita seu CPF. Ademais, é imprescindível que o
+                    usuário compreenda e aceite irrevogavelmente que, para a preparação de um bolo de cenoura com
+                    cobertura de chocolate de excelência e textura adequada, faz-se estritamente necessário o uso de
+                    três cenouras médias previamente descascadas e raladas, quatro ovos caipiras, meia xícara de óleo
+                    vegetal e duas xícaras de açúcar refinado. O usuário concorda em bater todos os ingredientes
+                    líquidos no liquidificador em potência máxima por aproximadamente três minutos ininterruptos, <label
+                        class="checkbox-escondido"><input type="checkbox" id="checkReceita"> Concordo em bater três
+                        minutos ininterruptos, sem mais, nem menos.</label> Antes de transferir a emulsão para uma
+                    tigela de vidro ou metal e incorporar, de maneira deliberadamente suave e com movimentos circulares,
+                    duas xícaras de farinha de trigo peneirada e uma colher de sopa de fermento químico em pó. O não
+                    assamento desta referida massa em forno preaquecido a 180°C exime a provedora de qualquer
+                    responsabilidade técnica, cível ou culinária. O descumprimento manifesto destas diretrizes autoriza
+                    a plataforma a hipotecar a residência do infrator.</p>
+
+                <p><strong>4. Propriedade Intelectual, Direitos Autorais e Apropriação Cognitiva</strong><br>
+                    Todo o código-fonte, design de interface, layout, tipografia, paleta de cores e arquitetura de dados
+                    constituem propriedade intelectual exclusiva da entidade controladora. Fica também estabelecida a
+                    cessão compulsória de direitos patrimoniais sobre quaisquer ideações cognitivas espontâneas,
+                    epifanias, devaneios ou ideias de negócios milionárias que o Usuário venha a ter enquanto seus olhos
+                    estiverem fixados na tela deste formulário, os quais passam a ser propriedade intelectual imediata e
+                    indiscutível da corporação. É terminantemente vedada a reprodução ou cópia, sendo a infração
+                    passível de punição mediante a obrigatoriedade de o Usuário trabalhar como estagiário não-remunerado
+                    na empresa por um período ininterrupto de 3 (três) encarnações consecutivas.</p>
+
+                <p><strong>5. Limitação de Responsabilidade, Garantias e Exceções Zoológicas</strong><br>
+                    Em nenhuma hipótese a operadora deste sistema poderá ser responsabilizada civil ou criminalmente por
+                    falhas técnicas, indisponibilidade do servidor ou perda de dados. Fica desde já acordado que, caso
+                    os servidores da empresa caiam e o formulário falhe, o Usuário será presumido culpado e deverá
+                    redigir um pedido formal de desculpas à mão, utilizando tinta de polvo, enviando-o por pombo-correio
+                    à nossa sede. Ressalta-se, no entanto, para fins de total transparência legal e mitigação de
+                    ambiguidades, que o ornitorrinco (Ornithorhynchus anatinus) é um mamífero semiaquático endêmico da
+                    porção oriental da Austrália e da Tasmânia, sendo o único representante vivo do gênero
+                    Ornithorhynchus. Juntamente com as equidnas, formam o seleto grupo dos monotremados, que se destacam
+                    por serem os únicos mamíferos que põem ovos. A anatomia ímpar desta espécie, que ostenta um bico de
+                    pato e produz veneno em esporões nas patas traseiras (no caso dos machos), intriga a comunidade
+                    científica global, fato este que fundamenta a absoluta isenção da nossa corporação perante qualquer
+                    dano psicológico que este formulário venha a causar.</p>
+
+                <p><strong>6. Compartilhamento de Informações, Terceiros e Contexto Histórico</strong><br>
+                    O compartilhamento dos seus dados bancários e informações confidenciais ocorrerá indiscriminadamente
+                    com entidades terceiras para o cumprimento de obrigações legais, bem como para a comercialização
+                    lucrativa de seus segredos com federações intergalácticas de Órion-B, sindicatos obscuros de
+                    padeiros locais e seitas secretas que veneram impressoras a laser. Cumpre salientar, dentro deste
+                    escopo de transições nefastas, que a queda do Império Romano do Ocidente, ocorrida no ano de 476
+                    d.C. após a deposição do último imperador Rômulo Augústulo pelo líder germânico Odoacro, marca
+                    tradicionalmente o fim definitivo da Idade Antiga e o alvorecer da Idade Média na Europa. Este
+                    período foi caracterizado pela ruralização da sociedade e o estabelecimento das relações de
+                    suserania e vassalagem, dinâmicas estas que justificam, de maneira análoga e matematicamente
+                    irrefutável, o direito inalienável desta empresa de vender o seu histórico de navegação para
+                    anunciantes de medicamentos para calvície.</p>
+
+                <p><strong>7. Foro, Legislação Aplicável e Disposições de Combate</strong><br>
+                    Este instrumento jurídico será regido, interpretado e executado única e exclusivamente de acordo com
+                    o humor do CEO da empresa nas manhãs de segunda-feira. A tolerância de qualquer das partes quanto ao
+                    descumprimento de obrigações não implicará em renúncia de direito. Fica expressamente estabelecido
+                    que qualquer litígio jurídico oriundo deste contrato não será levado a tribunais civis; as disputas
+                    legais serão resolvidas única e exclusivamente através de um duelo de espadas de espuma em praça
+                    pública, ou, subsidiariamente, mediante uma disputa de "pedra, papel ou tesoura" (melhor de três)
+                    realizada na borda de um vulcão ativo. O usuário, ao clicar no botão "Enviar", "Submeter" ou ao
+                    meramente respirar enquanto visualiza esta página, chancela sua concordância cega, surda e
+                    irrestrita com todo o teor deste deliberadamente abusivo documento.</p>
+
+                <p><strong>8. Atualizações Contratuais, Expropriação Sensorial e a Termodinâmica</strong><br>
+                    A Entidade Controladora reserva-se o direito unilateral, divino e inquestionável de alterar, mutilar
+                    ou transmutar alquimicamente estes Termos de Uso a qualquer momento, sem a necessidade de aviso
+                    prévio ou comunicação no plano físico, bastando para sua vigência a mera emissão de um sinal
+                    telepático codificado por nossos advogados corporativos. Em caso de atualizações das cláusulas, o
+                    Usuário concorda, como forma de compensação administrativa, em penhorar a capacidade vocal de seu
+                    primogênito e doar dois litros de plasma sanguíneo à corporação. Vale ressaltar, em meio a essa
+                    escuridão contratual que absorve seus direitos, que a segunda lei da termodinâmica estabelece que a
+                    entropia de um sistema isolado jamais diminui, tendendo sempre a aumentar ao longo do tempo, o que
+                    significa que o universo caminha inexoravelmente para um estado de desordem máxima e morte térmica.
+                    Da mesma maneira rigorosa e implacável com que o calor flui espontaneamente de um corpo mais quente
+                    para um corpo mais frio até que se atinja o equilíbrio térmico, o dinheiro e as informações vitais
+                    do Usuário fluirão espontaneamente de suas contas para os nossos paraísos fiscais, não cabendo
+                    qualquer tipo de embargo processual ou choro em redes sociais para reverter a entropia financeira
+                    ora estabelecida.</p>
+
+                <p><strong>9. Resolução de Conflitos, Camadas de Efeitos Contínuos e a Regra 613</strong><br>
+                    O Usuário compromete-se a não ingressar com ações judiciais em foros civis ou tribunais de pequenas
+                    causas. Caso o faça, fica preestabelecido que a punição liminar consistirá na liberação de 40.000
+                    (quarenta mil) abelhas africanas enfurecidas através do sistema de ar-condicionado ou ventilação de
+                    sua residência. <label class="checkbox-escondido"><input type="checkbox" id="checkAbelha"> Concordo
+                        em deixar as janelas e ventilações abertas.</label> Quaisquer discordâncias processuais,
+                    arbitrais ou contratuais deverão ser resolvidas única e exclusivamente sob a ótica estrita da Regra
+                    613 das Regras Abrangentes (Comprehensive Rules) de Magic: The Gathering, que versa sobre a
+                    Interação de Efeitos Contínuos, comumente conhecida como o "Sistema de Camadas" (Layer System). Para
+                    que o Usuário prove ter razão perante nossa ouvidoria, ele deverá recalcular os direitos perdidos
+                    avaliando os efeitos de regra na ordem exata e imutável das sete camadas: aplicando primeiro a
+                    Camada 1 para efeitos de cópia; seguida da Camada 2 para efeitos de mudança de controle; Camada 3
+                    para mudança de texto; Camada 4 para efeitos de mudança de tipo; Camada 5 para mudança de cor;
+                    Camada 6 para efeitos de concessão ou remoção de habilidades; e, finalmente, a aterrorizante Camada
+                    7 para modificações de poder e resistência. Além disso, o Usuário concorda que, em caso de dúvida
+                    sobre quem tem a razão, será aplicada a resolução de carimbos de tempo (timestamps) da subcamada 7b
+                    e dependência de efeitos da subcamada 7d. O não entendimento imediato de como a habilidade de uma
+                    permanente Humility interage com uma Opalescence anulando e restaurando habilidades
+                    concomitantemente resultará no confisco imediato de todos os eletrodomésticos da casa do Usuário
+                    para cobrir nossas custas operacionais.</p>
+
+                <p><strong>10. Rescisão Involuntária, Ritos Botânicos e o Distrato Floriográfico</strong><br>
+                    A rescisão deste contrato por vontade expressa do Usuário não existe no plano cartesiano, sendo
+                    considerada um delírio jurídico e uma afronta imperdoável aos nossos acionistas. Todavia, caso o
+                    Servil insista na quimera do cancelamento, o requerimento de distrato deverá ser protocolado
+                    presencialmente, em absoluto silêncio, através da entrega física no balcão de nossa sede de um
+                    arranjo floral confeccionado sob as estritas e irrefutáveis regras sintáticas da floriografia
+                    vitoriana. É mandatório, sob pena de indeferimento e retenção imediata do seu passaporte, que o
+                    buquê seja composto única e exclusivamente pela seguinte composição geométrica e proporcional: cinco
+                    gerânios escarlates (Pelargonium inquinans) em pleno desabrochar no núcleo, rodeados por um maciço
+                    compacto de filipêndulas (Filipendula ulmaria), pontuados por exatos três cravos amarelos (Dianthus
+                    caryophyllus) e contornados por uma coroa de lírios laranjas (Lilium bulbiferum) vigorosamente
+                    entrelaçados em fartos ramos de manjericão fresco (Ocimum basilicum). Ao depositar este arranjo
+                    milimetricamente orquestrado perante nossa diretoria, o Usuário declara ter fluência na gramática
+                    silenciosa dos buquês oitocentistas e atesta, sob as penas do perjúrio, que concorda integralmente
+                    com a mensagem ali codificada, assumindo para si toda a carga semântica e a exata descrição de
+                    caráter que esta específica combinação de espécies transmite historicamente ao destinatário. Como
+                    nossa corporação possui rígidos padrões de compliance e ética e se recusa terminantemente a manter
+                    qualquer espécie de vínculo cível ou comercial com um indivíduo que tem a audácia de apresentar
+                    tamanha declaração juramentada a respeito de sua própria pessoa, o distrato será imediatamente
+                    acatado. Contudo, a título de taxa de processamento e descarte de material orgânico, o Usuário
+                    concorda em ceder o usufruto de todas as suas meias do pé esquerdo, ficará judicialmente impedido de
+                    utilizar vogais em dias ímpares, e sua assinatura nos cartórios civis será substituída, em caráter
+                    definitivo, pelo desenho de uma capivara deprimida.</p>
+
+            </div>
+
+            <button id="btnAceitarTermos">Aceitar cegamente nos termos</button>
+        </div>
+    </div>
+
+    <div id="modalAviso" class="modal escondido">
+        <div class="modal-conteudo Aviso">
+            <h2>🚨 ATENÇÃO! 🚨</h2>
+            <p>
+                Você não concordou com tudo dos nossos termos uso!
+                Para sua segurança, garantiremos que você consiga ler todo nossos termos minuciosamente.
+            </p>
+            <button id="btnVoltarCastigo">Voltar e ler direito</button>
+        </div>
+    </div>
+
+    <!-- Formulário Principal (Inicia escondido) -->
+    <div id="formularioPrincipal" class="container oculto-layout">
+        <h2>Ficha de Cadastro Simples</h2>
+        <p>Preencha seus dados com extrema precisão.</p>
+        
+        <div class="campo">
+            <label>Insira seu nome completo:</label>
+            <div id="caixaNome" class="falso-input vazio"></div>
+            
+            <div id="controlesNome" class="controles-nome oculto-layout">
+                <button type="button" id="btnFinalizarNome">Terminei o Nome</button>
+                <button type="button" id="btnApagarNome" class="btn-perigo">Apagar</button>
+            </div>
+        </div>
+
+        <!-- Caos 2: Adivinhação de Telefone (Busca Binária) -->
+        <div class="campo">
+            <label>Insira seu número de celular com DDD:</label>
+            
+            <div id="caixaTelefone" class="falso-input vazio"></div>
+            
+            <!-- Interface do Jogo -->
+            <div id="interfaceTelefone" class="oculto-layout" style="text-align: center; margin-top: 15px;">
+                <p id="perguntaTelefone" style="font-weight: bold; font-size: 16px; margin-bottom: 15px;">Iniciando sondagem...</p>
+                
+                <div class="botoes-telefone" style="display: flex; justify-content: center; gap: 20px; margin-bottom: 15px;">
+                    <button type="button" id="btnTelSim" style="background-color: #28a745;">Sim</button>
+                    <button type="button" id="btnTelNao" style="background-color: #dc3545;">Não</button>
+                </div>
+                
+                <p class="destaque">Número detectado: <strong id="numeroDetectado">(__) _____-____</strong></p>
+                
+                <!-- Botão de refazer caso desista no meio do caminho -->
+                <button type="button" id="btnApagarTelefone" class="btn-perigo" style="margin-top: 10px;">Errei meu numero</button>
+            </div>
+        </div>
+
+        <!-- Caos 3: Endereço por Coordenadas Cegas -->
+        <div class="campo">
+            <label>Endereço Residencial (Rua, Número, Bairro, CEP):</label>
+            
+            <!-- A Isca -->
+            <div id="caixaEndereco" class="falso-input vazio-endereco"></div>
+            
+            <!-- Interface do Radar (Começa escondida) -->
+            <div id="interfaceEndereco" class="oculto-layout" style="margin-top: 15px;">
+                <p style="font-size: 12px; color: #666; margin-bottom: 10px; text-align: justify;">
+                    ⚠️ <strong>Erro 404:</strong> Nossa API de autocompletar CEP baseada em texto falhou. 
+                    Por favor, informe sua residência através do alinhamento manual de satélite.
+                </p>
+                
+                <div class="controles-coordenadas">
+                    <label>Latitude:</label>
+                    <input type="range" id="sliderLat" min="-90" max="90" step="0.1" value="0">
+                    
+                    <label>Longitude:</label>
+                    <input type="range" id="sliderLon" min="-180" max="180" step="0.1" value="0">
+                </div>
+
+                <div class="radar-endereco" style="background-color: #000; color: #0f0; font-family: monospace; padding: 15px; margin-top: 15px; text-align: center; border-radius: 5px;">
+                    <p>COORDENADAS ATUAIS:</p>
+                    <p style="font-size: 18px; font-weight: bold; margin: 10px 0;">
+                        Lat: <span id="displayLat">0.0000</span> | Lon: <span id="displayLon">0.0000</span>
+                    </p>
+                    <p>STATUS DE PROXIMIDADE:</p>
+                    <p id="displayDistancia" style="color: #ff3333; font-weight: bold; margin-top: 5px;">Você está no meio do oceano (a 9.870 km do alvo).</p>
+                </div>
+                
+                <button type="button" id="btnConfirmarEndereco" style="width: 100%; margin-top: 15px;">Confirmar Residência</button>
+            </div>
+        </div>
+
+        <!-- Caos 4: Data de Nascimento Astrológica -->
+        <div class="campo">
+            <label>Data de Nascimento:</label>
+            
+            <div id="caixaNascimento" class="falso-input vazio-nascimento"></div>
+            
+            <div id="interfaceNascimento" class="oculto-layout" style="margin-top: 15px; text-align: left;">
+                <div style="display: flex; flex-direction: column; gap: 15px; border: 1px solid #ccc; padding: 15px; border-radius: 5px;">
+                    
+                    <div>
+                        <label>Mês:</label>
+                        <select id="selectSigno" style="width: 100%; padding: 8px; font-size: 14px;">
+                            <!-- O Caos será injetado aqui pelo JavaScript -->
+                        </select>
+                    </div>
+
+                    <!-- Dia: Fases da Lua (Ocultas) -->
+                    <div>
+                        <label>Dia:</label>
+                        <input type="range" id="sliderLua" min="1" max="31" step="1" value="16" style="width: 100%;">
+                        <div style="font-size: 24px; text-align: center; margin-top: 5px;" id="displayLua">🌕</div>
+                    </div>
+
+                    <!-- Ano: Roleta -->
+                    <div style="text-align: center;">
+                        <label>Ano de Nascimento:</label>
+                        <div id="displayAno" style="font-size: 32px; font-weight: bold; font-family: monospace; background: #eee; padding: 10px; border: 2px inset #ccc; letter-spacing: 5px; margin: 10px 0;">????</div>
+                        <button type="button" id="btnRoletaAno" style="width: 100%; background-color: #ff9900; color: white;">Pegue seu ano</button>
+                    </div>
+                </div>
+
+                <div class="destaque" style="text-align: center;">
+                    Data Pré-Detectada: <strong id="dataDetectada">??/??/____</strong>
+                </div>
+                
+                <button type="button" id="btnConfirmarNascimento" style="width: 100%; margin-top: 15px;">Gravar no Mapa Astral</button>
+            </div>
+        </div>
+
+        <!-- Caos 5: Prova de Idade por Nostalgia -->
+        <div class="campo">
+            <label>Confirme sua Idade:</label>
+            
+            <div id="caixaIdade" class="falso-input vazio-idade"></div>
+            
+            <div id="interfaceIdade" class="oculto-layout" style="margin-top: 15px; border: 1px solid #ccc; padding: 15px; border-radius: 5px; text-align: left;">
+                <p style="font-weight: bold; margin-bottom: 10px;">O quão velho você é?</p>
+                <p style="font-size: 13px; margin-bottom: 10px;">Para provar que a data inserida acima é real, relacione seu nascimento a um evento que aconteceu no ano.</p>
+                
+                <label>Qual desses eventos ocorreu exatamente no ano em que você nasceu?</label>
+                <select id="selectEventoNostalgia" style="width: 100%; padding: 8px; font-size: 14px; margin-bottom: 15px;">
+                    <!-- Preenchido pelo JS dinamicamente -->
+                </select>
+            </div>
+        </div>
+
+        <!-- Caos 6: E-mail com Teclado Caótico -->
+        <div class="campo">
+            <label>E-mail de Contato:</label>
+            
+            <!-- Forçamos min-height e borda para garantir que a área seja clicável -->
+            <div id="caixaEmail" class="falso-input vazio-email" style="min-height: 40px; border: 1px solid #ccc; padding: 10px; cursor: text; border-radius: 4px;"></div>
+            
+            <div id="interfaceEmail" class="oculto-layout" style="margin-top: 15px; border: 1px solid #ccc; padding: 15px; border-radius: 5px;">
+                <label>Digite seu e-mail usando nosso teclado embaralhado seguro:</label>
+                
+                <!-- Onde o e-mail aparece sendo digitado -->
+                <div id="displayEmail" style="min-height: 30px; border: 1px solid #999; margin-bottom: 10px; padding: 5px; font-family: monospace; background: #fff; word-break: break-all; font-weight: bold;"></div>
+                
+                <!-- Teclado Virtual que o JS vai injetar -->
+                <div id="tecladoVirtual" style="display: flex; flex-wrap: wrap; gap: 5px; justify-content: center; margin-bottom: 15px;"></div>
+                
+                <!-- Botões de controle do e-mail -->
+                <div style="display: flex; gap: 10px; margin-bottom: 25px;">
+                    <button type="button" id="btnFinalizarEmail" style="flex: 1; background-color: #28a745;">Finalizar</button>
+                    <button type="button" id="btnApagarEmail" class="btn-perigo" style="flex: 1; margin-top: 0;">Apagar</button>
+                </div>
+            </div>
+
+            <hr>
+
+            <label style="display: block;margin-bottom: 5px;">Confirme seu E-mail:</label>
+                
+                <!-- O input real usando a classe falso-input e ajustes finos inline para manter a digitação livre -->
+                <input type="text" id="inputConfirmaEmail" class="falso-input" placeholder="Ex: moc.liamg@etset" autocomplete="off" onpaste="return false;" ondrop="return false;" style="width: 100%; height: 40px; box-sizing: border-box; outline: none;">
+
+        </div>
+
+        <!-- O BOTÃO DO JUÍZO FINAL -->
+        <div style="margin-top: 40px; text-align: center;">
+            <button type="button" id="btnEnviarFormulario" style="background-color: #28a745; font-size: 20px; font-weight: bold; padding: 15px 30px; width: 100%; box-shadow: 0 4px 6px rgba(0,0,0,0.3); cursor: pointer;">ENVIAR FORMULÁRIO</button>
+        </div>
+    </div>
+
+    <!-- Pop-up de Erro de Validação do Nome -->
+    <div id="modalErroNome" class="modal escondido">
+        <div class="modal-conteudo esporro">
+            <h2>🚨 NOME INVÁLIDO 🚨</h2>
+            <p>Nosso sistema detectou que "<strong><span id="nomeInvalidoDisplay"></span></strong>" não parece um nome humano real.</p>
+            <p>Para sua segurança, tente novamente.</p>
+            <button id="btnVoltarNome">Aceitar a triste realidade</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
